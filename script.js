@@ -2,25 +2,39 @@ let total = localStorage.getItem("total") || 0
 
 total = Number(total)
 
-function updateDisplay(){
+const circle = document.getElementById("progress")
 
-let mala = Math.floor(total / 108) + 1
-let bead = (total % 108) + 1
+const circumference = 691
+
+function update(){
+
+let mala = Math.floor(total/108)
+
+let bead = total % 108
 
 document.getElementById("mala").innerText = mala
+
 document.getElementById("bead").innerText = bead
+
+let progress = (bead/108)*circumference
+
+circle.style.strokeDashoffset = circumference - progress
 
 }
 
-updateDisplay()
+update()
 
-document.body.addEventListener("click", function(){
+document.body.addEventListener("click", function(e){
+
+if(e.target.tagName !== "BUTTON"){
 
 total++
 
 localStorage.setItem("total", total)
 
-updateDisplay()
+update()
+
+}
 
 })
 
@@ -30,6 +44,6 @@ total = 0
 
 localStorage.setItem("total", total)
 
-updateDisplay()
+update()
 
 }
