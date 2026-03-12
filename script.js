@@ -1,23 +1,34 @@
-let count = localStorage.getItem("count") || 0
+let total = localStorage.getItem("total") || 0
 
-document.getElementById("counter").innerText = count
+total = Number(total)
+
+function updateDisplay(){
+
+let mala = Math.floor(total / 108) + 1
+let bead = (total % 108) + 1
+
+document.getElementById("counter").innerText = mala + "/" + bead
+
+}
+
+updateDisplay()
 
 document.body.addEventListener("click", function(){
 
-count++
+total++
 
-document.getElementById("counter").innerText = count
+localStorage.setItem("total", total)
 
-localStorage.setItem("count", count)
+updateDisplay()
 
 })
 
 function reset(){
 
-count = 0
+total = 0
 
-localStorage.setItem("count", count)
+localStorage.setItem("total", total)
 
-document.getElementById("counter").innerText = count
+updateDisplay()
 
 }
