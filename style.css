@@ -1,0 +1,25 @@
+body{
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:#111;
+color:white;
+}
+
+#counter{
+font-size:80px;
+margin-bottom:40px;
+}
+
+button{
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#ff4757;
+color:white;
+}
