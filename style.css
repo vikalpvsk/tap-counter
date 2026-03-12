@@ -52,3 +52,23 @@ background:#111;
 color:white;
 text-align:center;
 }
+#counter{
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+margin-top:40px;
+}
+
+#mala{
+font-size:120px;
+}
+
+#bead{
+font-size:120px;
+}
+
+.slash{
+font-size:90px;
+margin:0 10px;
+}

@@ -7,7 +7,8 @@ function updateDisplay(){
 let mala = Math.floor(total / 108) + 1
 let bead = (total % 108) + 1
 
-document.getElementById("counter").innerText = mala + "/" + bead
+document.getElementById("mala").innerText = mala
+document.getElementById("bead").innerText = bead
 
 }
 
